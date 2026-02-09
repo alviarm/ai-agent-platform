@@ -45,13 +45,18 @@ class VectorStore:
         self.embedding_model = SentenceTransformer(embedding_model)
         self.embedding_dim = self.embedding_model.get_sentence_embedding_dimension()
         
-        # Initialize ChromaDB
-        self.client = chromadb.Client(
-            Settings(
-                chroma_db_impl="duckdb+parquet",
-                persist_directory=str(self.persist_dir),
+        # Initialize ChromaDB (new API for version 0.4+)
+        try:
+            # Try new API first (ChromaDB 0.4+)
+            self.client = chromadb.PersistentClient(path=str(self.persist_dir))
+        except (AttributeError, TypeError):
+            # Fallback to old API (ChromaDB < 0.4)
+            self.client = chromadb.Client(
+                Settings(
+                    chroma_db_impl="duckdb+parquet",
+                    persist_directory=str(self.persist_dir),
+                )
             )
-        )
         
         self.collection = self.client.get_or_create_collection(
             name=collection_name,
@@ -94,8 +99,9 @@ class VectorStore:
             ids=ids,
         )
         
-        # Persist
-        self.client.persist()
+        # Persist (only needed for old ChromaDB API)
+        if hasattr(self.client, 'persist'):
+            self.client.persist()
         
         logger.info(f"Added {len(documents)} documents to vector store")
         return ids
