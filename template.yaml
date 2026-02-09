@@ -1,0 +1,308 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Customer Service AI Platform - SAM Template
+
+Globals:
+  Function:
+    Timeout: 60
+    MemorySize: 3008
+    Runtime: python3.9
+    Architectures:
+      - x86_64
+    Environment:
+      Variables:
+        LOG_LEVEL: INFO
+
+Parameters:
+  OpenAIApiKey:
+    Type: String
+    Description: OpenAI API Key
+    NoEcho: true
+
+Resources:
+  # S3 Buckets
+  ModelsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "csa-models-${AWS::AccountId}"
+      VersioningConfiguration:
+        Status: Enabled
+
+  FeedbackBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "csa-feedback-${AWS::AccountId}"
+      LifecycleConfiguration:
+        Rules:
+          - Id: ArchiveOldFeedback
+            Status: Enabled
+            ExpirationInDays: 90
+            Transitions:
+              - StorageClass: GLACIER
+                TransitionInDays: 30
+
+  # DynamoDB Tables
+  ConversationsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: csa-conversations
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: conversation_id
+          AttributeType: S
+        - AttributeName: user_id
+          AttributeType: S
+        - AttributeName: updated_at
+          AttributeType: S
+      KeySchema:
+        - AttributeName: conversation_id
+          KeyType: HASH
+      GlobalSecondaryIndexes:
+        - IndexName: user-id-index
+          KeySchema:
+            - AttributeName: user_id
+              KeyType: HASH
+            - AttributeName: updated_at
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+
+  FeedbackTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: csa-feedback
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: feedback_id
+          AttributeType: S
+        - AttributeName: timestamp
+          AttributeType: S
+        - AttributeName: conversation_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: feedback_id
+          KeyType: HASH
+        - AttributeName: timestamp
+          KeyType: RANGE
+      GlobalSecondaryIndexes:
+        - IndexName: conversation-index
+          KeySchema:
+            - AttributeName: conversation_id
+              KeyType: HASH
+            - AttributeName: timestamp
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+
+  AnalyticsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: csa-analytics
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: metric_name
+          AttributeType: S
+        - AttributeName: timestamp
+          AttributeType: S
+      KeySchema:
+        - AttributeName: metric_name
+          KeyType: HASH
+        - AttributeName: timestamp
+          KeyType: RANGE
+
+  # Lambda Functions
+  IntentClassifierFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: csa-intent-classifier
+      Description: Classify customer intent using BERT
+      PackageType: Image
+      ImageUri: !Sub "${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/csa-intent-classifier:latest"
+      Environment:
+        Variables:
+          MODEL_BUCKET: !Ref ModelsBucket
+          MODEL_KEY: models/intent_classifier.onnx
+      Policies:
+        - S3ReadPolicy:
+            BucketName: !Ref ModelsBucket
+      Tracing: Active
+    Metadata:
+      DockerContext: ./lambda_functions/intent_classifier
+      Dockerfile: Dockerfile
+
+  ResponseGeneratorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: csa-response-generator
+      Description: Generate responses using RAG
+      PackageType: Image
+      ImageUri: !Sub "${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/csa-response-generator:latest"
+      Environment:
+        Variables:
+          CONVERSATIONS_TABLE: !Ref ConversationsTable
+          OPENAI_API_KEY: !Ref OpenAIApiKey
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref ConversationsTable
+      Tracing: Active
+    Metadata:
+      DockerContext: ./lambda_functions/response_generator
+      Dockerfile: Dockerfile
+
+  FeedbackProcessorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: csa-feedback-processor
+      Description: Process feedback with NLP pipeline
+      PackageType: Image
+      ImageUri: !Sub "${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/csa-feedback-processor:latest"
+      Environment:
+        Variables:
+          FEEDBACK_TABLE: !Ref FeedbackTable
+          ANALYTICS_TABLE: !Ref AnalyticsTable
+          FEEDBACK_BUCKET: !Ref FeedbackBucket
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref FeedbackTable
+        - DynamoDBCrudPolicy:
+            TableName: !Ref AnalyticsTable
+        - S3WritePolicy:
+            BucketName: !Ref FeedbackBucket
+      Tracing: Active
+    Metadata:
+      DockerContext: ./lambda_functions/feedback_processor
+      Dockerfile: Dockerfile
+
+  # API Gateway
+  CustomerServiceAPI:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: customer-service-ai-api
+      StageName: prod
+      TracingEnabled: true
+      MethodSettings:
+        - ResourcePath: /*
+          HttpMethod: '*'
+          LoggingLevel: INFO
+          DataTraceEnabled: true
+          MetricsEnabled: true
+
+  # API Gateway Resources and Methods
+  ChatResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref CustomerServiceAPI
+      ParentId: !GetAtt CustomerServiceAPI.RootResourceId
+      PathPart: chat
+
+  ChatMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref CustomerServiceAPI
+      ResourceId: !Ref ChatResource
+      HttpMethod: POST
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Sub
+          - arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${FunctionArn}/invocations
+          - FunctionArn: !GetAtt ResponseGeneratorFunction.Arn
+
+  FeedbackResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref CustomerServiceAPI
+      ParentId: !GetAtt CustomerServiceAPI.RootResourceId
+      PathPart: feedback
+
+  FeedbackMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref CustomerServiceAPI
+      ResourceId: !Ref FeedbackResource
+      HttpMethod: POST
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Sub
+          - arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${FunctionArn}/invocations
+          - FunctionArn: !GetAtt FeedbackProcessorFunction.Arn
+
+  # Lambda Permissions
+  IntentClassifierApiPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref IntentClassifierFunction
+      Action: lambda:InvokeFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${CustomerServiceAPI}/*"
+
+  ResponseGeneratorApiPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref ResponseGeneratorFunction
+      Action: lambda:InvokeFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${CustomerServiceAPI}/*"
+
+  FeedbackProcessorApiPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref FeedbackProcessorFunction
+      Action: lambda:InvokeFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${CustomerServiceAPI}/*"
+
+  # CloudWatch Alarms
+  HighErrorRateAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: csa-high-error-rate
+      AlarmDescription: Alarm when error rate exceeds threshold
+      MetricName: Errors
+      Namespace: AWS/Lambda
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 10
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref ResponseGeneratorFunction
+
+  HighLatencyAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: csa-high-latency
+      AlarmDescription: Alarm when latency exceeds threshold
+      MetricName: Duration
+      Namespace: AWS/Lambda
+      Statistic: Average
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 5000
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref ResponseGeneratorFunction
+
+Outputs:
+  APIEndpoint:
+    Description: API Gateway endpoint URL
+    Value: !Sub "https://${CustomerServiceAPI}.execute-api.${AWS::Region}.amazonaws.com/prod"
+  
+  ModelsBucket:
+    Description: S3 bucket for model artifacts
+    Value: !Ref ModelsBucket
+  
+  ConversationsTable:
+    Description: DynamoDB table for conversations
+    Value: !Ref ConversationsTable
+  
+  FeedbackTable:
+    Description: DynamoDB table for feedback
+    Value: !Ref FeedbackTable

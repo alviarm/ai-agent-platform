@@ -1,0 +1,182 @@
+"""
+Docker Compose for Local Testing Environment
+Simulates AWS cloud infrastructure using LocalStack + ChromaDB + Redis
+"""
+version: "3.8"
+
+services:
+  # LocalStack - Simulates AWS services (S3, DynamoDB, CloudWatch)
+  localstack:
+    image: localstack/localstack:latest
+    container_name: csai-localstack
+    ports:
+      - "4566:4566"            # LocalStack Gateway
+      - "4510-4559:4510-4559"  # External services port range
+    environment:
+      - DEBUG=1
+      - LAMBDA_EXECUTOR=docker
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - SERVICES=s3,dynamodb,cloudwatch,logs
+      - DEFAULT_REGION=us-east-1
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+    volumes:
+      - "./tests/scripts/init_localstack.sh:/etc/localstack/init/ready.d/init-aws.sh"
+      - "./data:/data"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "localstack_data:/var/lib/localstack"
+    networks:
+      - csai-test-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4566/_localstack/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ChromaDB - Vector store for RAG
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: csai-chromadb
+    ports:
+      - "8001:8000"
+    environment:
+      - CHROMA_SERVER_HOST=0.0.0.0
+      - CHROMA_SERVER_HTTP_PORT=8000
+      - CHROMA_SERVER_CORS_ALLOW_ORIGINS=["*"]
+      - PERSIST_DIRECTORY=/chroma/chroma
+    volumes:
+      - "chromadb_data:/chroma/chroma"
+      - "./tests/scripts/seed_chroma.py:/seed_chroma.py"
+      - "./data:/data"
+    networks:
+      - csai-test-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/heartbeat"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis - Conversation state caching (optional)
+  redis:
+    image: redis:7-alpine
+    container_name: csai-redis
+    ports:
+      - "6380:6379"
+    volumes:
+      - "redis_data:/data"
+    networks:
+      - csai-test-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # Test Runner - Python environment for running tests
+  test-runner:
+    build:
+      context: .
+      dockerfile: tests/Dockerfile.test
+    container_name: csai-test-runner
+    environment:
+      # AWS Configuration (LocalStack)
+      - AWS_ENDPOINT_URL=http://localstack:4566
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_REGION=us-east-1
+      
+      # Service URLs
+      - CHROMADB_HOST=chromadb
+      - CHROMADB_PORT=8000
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      
+      # Test Configuration
+      - TEST_MODE=true
+      - USE_LOCALSTACK=true
+      - INTENT_MODEL_PATH=/app/data/models
+      - CHROMA_PERSIST_DIR=/app/data/chroma
+      - PYTHONPATH=/app
+      
+      # Model Configuration
+      - EMBEDDING_MODEL=all-MiniLM-L6-v2
+      - LLM_MODEL=huggingface/TinyLlama/TinyLlama-1.1B-Chat-v1.0
+    volumes:
+      - ".:/app"
+      - "test_artifacts:/app/test_artifacts"
+    working_dir: /app
+    depends_on:
+      localstack:
+        condition: service_healthy
+      chromadb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - csai-test-network
+    command: >
+      bash -c "
+        echo 'Waiting for services to be fully ready...' &&
+        sleep 10 &&
+        echo 'Initializing ChromaDB with seed data...' &&
+        python /app/tests/scripts/seed_chroma.py &&
+        echo 'Running tests...' &&
+        pytest tests/ -v --cov=src --cov-report=html:/app/test_artifacts/coverage_html --cov-report=xml:/app/test_artifacts/coverage.xml --junitxml=/app/test_artifacts/junit.xml &&
+        echo 'Tests complete. Results in /app/test_artifacts/'
+      "
+
+  # Local API Server for E2E testing
+  api-server:
+    build:
+      context: .
+      dockerfile: tests/Dockerfile.test
+    container_name: csai-api-server
+    ports:
+      - "8002:8000"
+    environment:
+      - AWS_ENDPOINT_URL=http://localstack:4566
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+      - CHROMADB_HOST=chromadb
+      - CHROMADB_PORT=8000
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - INTENT_MODEL_PATH=/app/data/models
+      - CHROMA_PERSIST_DIR=/app/data/chroma
+      - PYTHONPATH=/app
+      - API_PORT=8000
+      - LLM_MODEL=huggingface/TinyLlama/TinyLlama-1.1B-Chat-v1.0
+    volumes:
+      - ".:/app"
+    working_dir: /app
+    depends_on:
+      localstack:
+        condition: service_healthy
+      chromadb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - csai-test-network
+    command: >
+      bash -c "
+        echo 'Initializing ChromaDB with seed data...' &&
+        python /app/tests/scripts/seed_chroma.py &&
+        echo 'Starting API server...' &&
+        python -m src.api.main
+      "
+    profiles:
+      - api  # Only start when explicitly requested: docker-compose --profile api up
+
+volumes:
+  localstack_data:
+  chromadb_data:
+  redis_data:
+  test_artifacts:
+
+networks:
+  csai-test-network:
+    driver: bridge

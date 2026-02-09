@@ -1,0 +1,1649 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-09T15:28:51.890608",
+    "total_samples": 199,
+    "categories": [
+      "grievance",
+      "billing",
+      "technical",
+      "support",
+      "escalation",
+      "general_inquiry",
+      "return"
+    ]
+  },
+  "samples": [
+    {
+      "text": "Need a copy of my invoice",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Need a copy of my invoice"
+      }
+    },
+    {
+      "text": "Missed guaranteed delivery date",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Missed guaranteed delivery date"
+      }
+    },
+    {
+      "text": "Newsletter subscription",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Newsletter subscription"
+      }
+    },
+    {
+      "text": "Order never arrived but I was charged",
+      "intent": "escalation",
+      "metadata": {
+        "is_ambiguous": true,
+        "possible_intents": [
+          "return",
+          "billing",
+          "technical"
+        ]
+      }
+    },
+    {
+      "text": "Accessory recommendations",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Accessory recommendations"
+      }
+    },
+    {
+      "text": "My refund hasn't appeared yet",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "My refund hasn't appeared yet"
+      }
+    },
+    {
+      "text": "Reviewing my legal options",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Reviewing my legal options"
+      }
+    },
+    {
+      "text": "What are yoru store hours?",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "What are your store hours?"
+      }
+    },
+    {
+      "text": "Billing issue with order #ORD-354801",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Billing issue with order #{order_id}"
+      }
+    },
+    {
+      "text": "Return policy for router?",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Return policy for {product}?"
+      }
+    },
+    {
+      "text": "Partner with your company",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Partner with your company"
+      }
+    },
+    {
+      "text": "Corporate gifting options",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Corporate gifting options"
+      }
+    },
+    {
+      "text": "My refund hasn't appeared yet",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "My refund hasn't appeared yet"
+      }
+    },
+    {
+      "text": "Bulk pricing available?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Bulk pricing available?"
+      }
+    },
+    {
+      "text": "Bulk pricing available? grazie",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Bulk pricing available?"
+      }
+    },
+    {
+      "text": "Missed guaranteed delivery date",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Missed guaranteed delivery date"
+      }
+    },
+    {
+      "text": "Account hacked, need help",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Account hacked, need help"
+      }
+    },
+    {
+      "text": "Saved payment methods disappeared",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Saved payment methods disappeared"
+      }
+    },
+    {
+      "text": "Can I return without the original box?",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Can I return without the original box?"
+      }
+    },
+    {
+      "text": "Legal action will be taken",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Legal action will be taken"
+      }
+    },
+    {
+      "text": "I was charged twice for my order",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "I was charged twice for my order"
+      }
+    },
+    {
+      "text": "Cancel my order",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Cancel my order"
+      }
+    },
+    {
+      "text": "How do I set up my cable?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "How do I set up my {product}?"
+      }
+    },
+    {
+      "text": "My item is broken and I want a refund but also update my card",
+      "intent": "escalation",
+      "metadata": {
+        "is_ambiguous": true,
+        "possible_intents": [
+          "return",
+          "billing",
+          "technical"
+        ]
+      }
+    },
+    {
+      "text": "Error 500 on checkout",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Error 500 on checkout"
+      }
+    },
+    {
+      "text": "This battery is defective, need to return",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "This {product} is defective, need to return"
+      }
+    },
+    {
+      "text": "Career opportunities",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Career opportunities"
+      }
+    },
+    {
+      "text": "How long do returns take to process? - merci",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "How long do returns take to process?"
+      }
+    },
+    {
+      "text": "What are your store hours?",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "What are your store hours?"
+      }
+    },
+    {
+      "text": "I've been waiting for a response for days",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "I've been waiting for a response for days"
+      }
+    },
+    {
+      "text": "Emotional distress from experience",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Emotional distress from experience"
+      }
+    },
+    {
+      "text": "Account hacked, need help",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Account hacked, need help"
+      }
+    },
+    {
+      "text": "How to contact support by phone?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "How to contact support by phone?"
+      }
+    },
+    {
+      "text": "Error 500 on checkout",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Error 500 on checkout"
+      }
+    },
+    {
+      "text": "Demand immediate callback",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Demand immediate callback"
+      }
+    },
+    {
+      "text": "My smartwatch doesn't fit, how to return?",
+      "intent": "return",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "My {product} doesn't fit, how to return?"
+      }
+    },
+    {
+      "text": "Order never arrived but I was charged",
+      "intent": "escalation",
+      "metadata": {
+        "is_ambiguous": true,
+        "possible_intents": [
+          "return",
+          "billing",
+          "technical"
+        ]
+      }
+    },
+    {
+      "text": "Missed guaranteed delivery date",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Missed guaranteed delivery date"
+      }
+    },
+    {
+      "text": "How long does shipping take?",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "How long does shipping take?"
+      }
+    },
+    {
+      "text": "Error 500 on checkout",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Error 500 on checkout"
+      }
+    },
+    {
+      "text": "How long do returns take to process?",
+      "intent": "return",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "How long do returns take to process?"
+      }
+    },
+    {
+      "text": "Loooking for product reviews",
+      "intent": "support",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Looking for product reviews"
+      }
+    },
+    {
+      "text": "Error 500 on checkout",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Error 500 on checkout"
+      }
+    },
+    {
+      "text": "Worst customer experience ever",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Worst customer experience ever"
+      }
+    },
+    {
+      "text": "Browser compatibility issue",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Browser compatibility issue"
+      }
+    },
+    {
+      "text": "Promo code didn't apply",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Promo code didn't apply"
+      }
+    },
+    {
+      "text": "How to contact support by phone?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "How to contact support by phone?"
+      }
+    },
+    {
+      "text": "Executive team contact needed",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Executive team contact needed"
+      }
+    },
+    {
+      "text": "Error 500 on checkout",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Error 500 on checkout"
+      }
+    },
+    {
+      "text": "Legal action will be taken",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Legal action will be taken"
+      }
+    },
+    {
+      "text": "Taking my business elsewhere",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Taking my business elsewhere"
+      }
+    },
+    {
+      "text": "How do I set up my headphones?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "How do I set up my {product}?"
+      }
+    },
+    {
+      "text": "Account hacked, need help",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Account hacked, need help"
+      }
+    },
+    {
+      "text": "Got the wrong cable, need to return",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Got the wrong {product}, need to return"
+      }
+    },
+    {
+      "text": "Return shipping label not received",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Return shipping label not received"
+      }
+    },
+    {
+      "text": "Escalate this issue immediately",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Escalate this issue immediately"
+      }
+    },
+    {
+      "text": "Return policy for charger?",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Return policy for {product}?"
+      }
+    },
+    {
+      "text": "Card declined but money was taken",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Card declined but money was taken"
+      }
+    },
+    {
+      "text": "How long does shipping take? - \u8c22\u8c22",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "How long does shipping take?"
+      }
+    },
+    {
+      "text": "Promo code didn't apply",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Promo code didn't apply"
+      }
+    },
+    {
+      "text": "Emotional distress from experience",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Emotional distress from experience"
+      }
+    },
+    {
+      "text": "Need a copy of my invoice",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Need a copy of my invoice"
+      }
+    },
+    {
+      "text": "Demand immediate callback",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Demand immediate callback"
+      }
+    },
+    {
+      "text": "Product caused damage",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Product caused damage"
+      }
+    },
+    {
+      "text": "Lost money because of you",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Lost money because of you"
+      }
+    },
+    {
+      "text": "How to contact support by phone?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "How to contact support by phone?"
+      }
+    },
+    {
+      "text": "Social media post coming",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Social media post coming"
+      }
+    },
+    {
+      "text": "Afterpay unstallment issue",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Afterpay installment issue"
+      }
+    },
+    {
+      "text": "Double charged for shipping",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Double charged for shipping"
+      }
+    },
+    {
+      "text": "Product caused damage",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Product caused damage"
+      }
+    },
+    {
+      "text": "Website won't load properly",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Website won't load properly"
+      }
+    },
+    {
+      "text": "Return label not working, website broken",
+      "intent": "escalation",
+      "metadata": {
+        "is_ambiguous": true,
+        "possible_intents": [
+          "return",
+          "billing",
+          "technical"
+        ]
+      }
+    },
+    {
+      "text": "Demand full compensation",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Demand full compensation"
+      }
+    },
+    {
+      "text": "Warranty information danke",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Warranty information"
+      }
+    },
+    {
+      "text": "Gift return question - recipient returning",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Gift return question - recipient returning"
+      }
+    },
+    {
+      "text": "Promo code didn't apply",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Promo code didn't apply"
+      }
+    },
+    {
+      "text": "Two-factor authentication not working",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Two-factor authentication not working"
+      }
+    },
+    {
+      "text": "Customer service was rude",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Customer service was rude"
+      }
+    },
+    {
+      "text": "How to contact support by phone?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "How to contact support by phone?"
+      }
+    },
+    {
+      "text": "Got the wrong smartwatch, need to return",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Got the wrong {product}, need to return"
+      }
+    },
+    {
+      "text": "Product comparison help",
+      "intent": "support",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Product comparison help"
+      }
+    },
+    {
+      "text": "Why is there an extra charge on my card?",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Why is there an extra charge on my card?"
+      }
+    },
+    {
+      "text": "This is unacceptable service",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "This is unacceptable service"
+      }
+    },
+    {
+      "text": "Cancel my order",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Cancel my order"
+      }
+    },
+    {
+      "text": "I need to speak to a supervisor",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "I need to speak to a supervisor"
+      }
+    },
+    {
+      "text": "Accessory recommendations",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Accessory recommendations"
+      }
+    },
+    {
+      "text": "Billing issue with order #ORD-246991",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Billing issue with order #{order_id}"
+      }
+    },
+    {
+      "text": "Cancel my order",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Cancel my order"
+      }
+    },
+    {
+      "text": "Return label not working, website broken",
+      "intent": "escalation",
+      "metadata": {
+        "is_ambiguous": true,
+        "possible_intents": [
+          "return",
+          "billing",
+          "technical"
+        ]
+      }
+    },
+    {
+      "text": "How long do returns take to process?",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "How long do returns take to process?"
+      }
+    },
+    {
+      "text": "Need to change address for pending order but can't login",
+      "intent": "escalation",
+      "metadata": {
+        "is_ambiguous": true,
+        "possible_intents": [
+          "return",
+          "billing",
+          "technical"
+        ]
+      }
+    },
+    {
+      "text": "You ruined my interview",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "You ruined my {event}"
+      }
+    },
+    {
+      "text": "Legal action will be taken",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Legal action will be taken"
+      }
+    },
+    {
+      "text": "Download link not working",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Download link not working"
+      }
+    },
+    {
+      "text": "Push notifications brpken",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Push notifications broken"
+      }
+    },
+    {
+      "text": "Can I get a product demo?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Can I get a product demo?"
+      }
+    },
+    {
+      "text": "Missed guaranteed delivery date",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Missed guaranteed delivery date"
+      }
+    },
+    {
+      "text": "I've been waiting for a response for days",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "I've been waiting for a response for days"
+      }
+    },
+    {
+      "text": "Order confirmation email missing",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Order confirmation email missing"
+      }
+    },
+    {
+      "text": "Unauthorized charge on my account",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Unauthorized charge on my account"
+      }
+    },
+    {
+      "text": "Product caused damage",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Product caused damage"
+      }
+    },
+    {
+      "text": "Return policy for printer?",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Return policy for {product}?"
+      }
+    },
+    {
+      "text": "Unauthorized charge on my account",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Unauthorized charge on my account"
+      }
+    },
+    {
+      "text": "Two-factor authentication not working",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Two-factor authentication not working"
+      }
+    },
+    {
+      "text": "Promo code didn't apply",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Promo code didn't apply"
+      }
+    },
+    {
+      "text": "False advertising complaint",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "False advertising complaint"
+      }
+    },
+    {
+      "text": "Double charged for shipping",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Double charged for shipping"
+      }
+    },
+    {
+      "text": "Mobile app won't install",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Mobile app won't install"
+      }
+    },
+    {
+      "text": "Order confirmation email missing",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Order confirmation email missing"
+      }
+    },
+    {
+      "text": "Initiating return for order #ORD-813328",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Initiating return for order #{order_id}"
+      }
+    },
+    {
+      "text": "Extremely dissatisfied with service",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Extremely dissatisfied with service"
+      }
+    },
+    {
+      "text": "Saved payment methods disappeared",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Saved payment methods disappeared"
+      }
+    },
+    {
+      "text": "Account login issues",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Account login issues"
+      }
+    },
+    {
+      "text": "Can I return without the original box?",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Can I return without the original box?"
+      }
+    },
+    {
+      "text": "Payment not going through",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Payment not going through"
+      }
+    },
+    {
+      "text": "Product problem and billing error at the same time",
+      "intent": "escalation",
+      "metadata": {
+        "is_ambiguous": true,
+        "possible_intents": [
+          "return",
+          "billing",
+          "technical"
+        ]
+      }
+    },
+    {
+      "text": "Website won't load prroperly",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Website won't load properly"
+      }
+    },
+    {
+      "text": "Question about sales tax (gracias)",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Question about sales tax"
+      }
+    },
+    {
+      "text": "The scanner arrived broken, want to return it",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "The {product} arrived broken, want to return it"
+      }
+    },
+    {
+      "text": "Bulk pricing available?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Bulk pricing available?"
+      }
+    },
+    {
+      "text": "Wrong item sent and charged wrong amount",
+      "intent": "escalation",
+      "metadata": {
+        "is_ambiguous": true,
+        "possible_intents": [
+          "return",
+          "billing",
+          "technical"
+        ]
+      }
+    },
+    {
+      "text": "Order confirmation email missing",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Order confirmation email missing"
+      }
+    },
+    {
+      "text": "Two-factor authentication not working",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Two-factor authentication not working"
+      }
+    },
+    {
+      "text": "Is this compatible with Samsung Galaxy?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Is this compatible with {device}?"
+      }
+    },
+    {
+      "text": "Corporate gifting options",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Corporate gifting options"
+      }
+    },
+    {
+      "text": "Bulk pricing available?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Bulk pricing available?"
+      }
+    },
+    {
+      "text": "Change shipping address",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Change shipping address"
+      }
+    },
+    {
+      "text": "Is this compatible with PlayStation 5?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Is this compatible with {device}?"
+      }
+    },
+    {
+      "text": "Product caused damage",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Product caused damage"
+      }
+    },
+    {
+      "text": "Pending charge question",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Pending charge question"
+      }
+    },
+    {
+      "text": "Upgrade options available?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Upgrade options available?"
+      }
+    },
+    {
+      "text": "My item is broken and I want a refund but also update my card",
+      "intent": "escalation",
+      "metadata": {
+        "is_ambiguous": true,
+        "possible_intents": [
+          "return",
+          "billing",
+          "technical"
+        ]
+      }
+    },
+    {
+      "text": "Payment not going through",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Payment not going through"
+      }
+    },
+    {
+      "text": "Connect me to your manager",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Connect me to your manager"
+      }
+    },
+    {
+      "text": "Legal action will be taken",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Legal action will be taken"
+      }
+    },
+    {
+      "text": "Extremely dissatisfied with service",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Extremely dissatisfied with service"
+      }
+    },
+    {
+      "text": "This is the third time I've contacted you",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "This is the third time I've contacted you"
+      }
+    },
+    {
+      "text": "This battery is defective, need to return",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "This {product} is defective, need to return"
+      }
+    },
+    {
+      "text": "This modem is defective, need to reurn",
+      "intent": "return",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "This {product} is defective, need to return"
+      }
+    },
+    {
+      "text": "This router is defective, need to return",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "This {product} is defective, need to return"
+      }
+    },
+    {
+      "text": "Do you ship to Singapore?",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Do you ship to {country}?"
+      }
+    },
+    {
+      "text": "Pending charge question",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Pending charge question"
+      }
+    },
+    {
+      "text": "How do I set up my laptop?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "How do I set up my {product}?"
+      }
+    },
+    {
+      "text": "Account login issues",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Account login issues"
+      }
+    },
+    {
+      "text": "Social media post coming",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Social media post coming"
+      }
+    },
+    {
+      "text": "Order never arrived but I was charged",
+      "intent": "escalation",
+      "metadata": {
+        "is_ambiguous": true,
+        "possible_intents": [
+          "return",
+          "billing",
+          "technical"
+        ]
+      }
+    },
+    {
+      "text": "Download link not working",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Download link not working"
+      }
+    },
+    {
+      "text": "Return policyy for printer?",
+      "intent": "return",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Return policy for {product}?"
+      }
+    },
+    {
+      "text": "Accessory recommendations",
+      "intent": "support",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Accessory recommendations"
+      }
+    },
+    {
+      "text": "Worst customer experience ever",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Worst customer experience ever"
+      }
+    },
+    {
+      "text": "Never ordering again obrigado",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Never ordering again"
+      }
+    },
+    {
+      "text": "Upgrade options available?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Upgrade options available?"
+      }
+    },
+    {
+      "text": "Warranty claim process",
+      "intent": "support",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Warranty claim process"
+      }
+    },
+    {
+      "text": "Account hacked, need help",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Account hacked, need help"
+      }
+    },
+    {
+      "text": "Order confirmation email missing",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Order confirmation email missing"
+      }
+    },
+    {
+      "text": "Connect me to your manager",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Connect me to your manager"
+      }
+    },
+    {
+      "text": "Session keeps expiring",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Session keeps expiring"
+      }
+    },
+    {
+      "text": "Final warning before dispute",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Final warning before dispute"
+      }
+    },
+    {
+      "text": "I was charged twice for my order",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "I was charged twice for my order"
+      }
+    },
+    {
+      "text": "My camera doesn't fit, how to return?",
+      "intent": "return",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "My {product} doesn't fit, how to return?"
+      }
+    },
+    {
+      "text": "Order confirmation email missing",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Order confirmation email missing"
+      }
+    },
+    {
+      "text": "Social media post coming",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Social media post coming"
+      }
+    },
+    {
+      "text": "Gift wrapping available?",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Gift wrapping available?"
+      }
+    },
+    {
+      "text": "How long does shipping take?",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "How long does shipping take?"
+      }
+    },
+    {
+      "text": "Session keeps expiring",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Session keeps expiring"
+      }
+    },
+    {
+      "text": "Taking my business elsewhere",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Taking my business elsewhere"
+      }
+    },
+    {
+      "text": "Escalate this issue immediately",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Escalate this issue immediately"
+      }
+    },
+    {
+      "text": "Product care instructions",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Product care instructions"
+      }
+    },
+    {
+      "text": "User manual request",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "User manual request"
+      }
+    },
+    {
+      "text": "Legal action will be taken",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Legal action will be taken"
+      }
+    },
+    {
+      "text": "File a formal complaint",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "File a formal complaint"
+      }
+    },
+    {
+      "text": "False advertising complaint",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "False advertising complaint"
+      }
+    },
+    {
+      "text": "I want to speak to corporate",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "I want to speak to corporate"
+      }
+    },
+    {
+      "text": "Session keeps expiring",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Session keeps expiring"
+      }
+    },
+    {
+      "text": "Card declined but money was taken",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Card declined but money was taken"
+      }
+    },
+    {
+      "text": "My mouse doesn't fit, how to return?",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "My {product} doesn't fit, how to return?"
+      }
+    },
+    {
+      "text": "Promo code didn't apply",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Promo code didn't apply"
+      }
+    },
+    {
+      "text": "Social media post coming",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Social media post coming"
+      }
+    },
+    {
+      "text": "Can I get a product demo?",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Can I get a product demo?"
+      }
+    },
+    {
+      "text": "Got the wrong modem, need to return",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Got the wrong {product}, need to return"
+      }
+    },
+    {
+      "text": "This webcam is defective, need to return",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "This {product} is defective, need to return"
+      }
+    },
+    {
+      "text": "Modify order before shipping",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Modify order before shipping"
+      }
+    },
+    {
+      "text": "Regret this purchase",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Regret this purchase"
+      }
+    },
+    {
+      "text": "Newsletter subscription",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Newsletter subscription"
+      }
+    },
+    {
+      "text": "Billing issue with order #ORD-716886",
+      "intent": "billing",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Billing issue with order #{order_id}"
+      }
+    },
+    {
+      "text": "Want to cancel membership",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Want to cancel membership"
+      }
+    },
+    {
+      "text": "Cancel my order",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Cancel my order"
+      }
+    },
+    {
+      "text": "Warranty claim process",
+      "intent": "support",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Warranty claim process"
+      }
+    },
+    {
+      "text": "Cancel my order",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Cancel my order"
+      }
+    },
+    {
+      "text": "Got the wrong battery, need to return",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Got the wrong {product}, need to return"
+      }
+    },
+    {
+      "text": "Gift return question - recipient returning",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Gift return question - recipient returning"
+      }
+    },
+    {
+      "text": "Emotional distress from experience",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Emotional distress from experience"
+      }
+    },
+    {
+      "text": "How long does shipping take?",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "How long does shipping take?"
+      }
+    },
+    {
+      "text": "Browser compatibility issue",
+      "intent": "technical",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Browser compatibility issue"
+      }
+    },
+    {
+      "text": "Corporate gifting options",
+      "intent": "general_inquiry",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "Corporate gifting options"
+      }
+    },
+    {
+      "text": "Reviewing my legal options",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "Reviewing my legal options"
+      }
+    },
+    {
+      "text": "You ruined my holiday",
+      "intent": "grievance",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "You ruined my {event}"
+      }
+    },
+    {
+      "text": "How long do returns take to process?",
+      "intent": "return",
+      "metadata": {
+        "has_typos": false,
+        "template_used": "How long do returns take to process?"
+      }
+    },
+    {
+      "text": "This is the third time I've contacted you",
+      "intent": "escalation",
+      "metadata": {
+        "has_typos": true,
+        "template_used": "This is the third time I've contacted you"
+      }
+    }
+  ]
+}

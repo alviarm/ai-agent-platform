@@ -1,0 +1,116 @@
+[
+  {
+    "question": "What is your return policy?",
+    "answer": "We accept returns within 30 days of purchase. Items must be unused and in original packaging. Refunds are processed within 5-7 business days after we receive the returned item.",
+    "category": "returns",
+    "intent": "return"
+  },
+  {
+    "question": "How do I initiate a return?",
+    "answer": "To initiate a return, log into your account, go to 'Order History', select the order you want to return, and click 'Return Item'. You'll receive a prepaid return label via email.",
+    "category": "returns",
+    "intent": "return"
+  },
+  {
+    "question": "I received a damaged item, what should I do?",
+    "answer": "We apologize for the inconvenience. Please contact us immediately with photos of the damaged item and packaging. We'll send a replacement at no extra charge and provide a prepaid return label for the damaged item.",
+    "category": "returns",
+    "intent": "return"
+  },
+  {
+    "question": "When will my refund appear?",
+    "answer": "Refunds typically take 5-7 business days to appear in your account after we receive and process your return. The exact timing depends on your bank or credit card company.",
+    "category": "billing",
+    "intent": "billing"
+  },
+  {
+    "question": "I was charged twice for my order",
+    "answer": "We sincerely apologize for this billing error. Please provide us with the transaction IDs or last 4 digits of your card, and we'll investigate immediately. If confirmed, we'll process a refund for the duplicate charge within 24 hours.",
+    "category": "billing",
+    "intent": "billing"
+  },
+  {
+    "question": "How do I update my payment method?",
+    "answer": "You can update your payment method by logging into your account, going to 'Payment Methods' in your profile settings, and adding or editing your payment information.",
+    "category": "billing",
+    "intent": "billing"
+  },
+  {
+    "question": "The app keeps crashing when I try to login",
+    "answer": "We're sorry you're experiencing this issue. Please try these steps: 1) Force close the app and reopen it, 2) Clear the app cache in your device settings, 3) Update to the latest app version, 4) If problems persist, try uninstalling and reinstalling the app.",
+    "category": "technical",
+    "intent": "technical"
+  },
+  {
+    "question": "I forgot my password, how do I reset it?",
+    "answer": "Click 'Forgot Password' on the login screen and enter your email address. We'll send you a password reset link that expires in 24 hours. Check your spam folder if you don't see the email within a few minutes.",
+    "category": "technical",
+    "intent": "technical"
+  },
+  {
+    "question": "Two-factor authentication is not working",
+    "answer": "If you're not receiving 2FA codes, please check: 1) Your phone has signal/service, 2) The phone number in your account is correct, 3) You're not blocking messages from our short code. If issues persist, contact support to verify your account identity.",
+    "category": "technical",
+    "intent": "technical"
+  },
+  {
+    "question": "How do I set up my new device?",
+    "answer": "Your device comes with a quick start guide in the box. You can also download the full user manual from our website. For video tutorials, visit our YouTube channel or the 'Support' section of our website.",
+    "category": "support",
+    "intent": "support"
+  },
+  {
+    "question": "What are the product specifications?",
+    "answer": "Detailed product specifications are available on each product page under the 'Specifications' tab. If you need additional technical details, please contact our product support team.",
+    "category": "support",
+    "intent": "support"
+  },
+  {
+    "question": "Is this product compatible with my device?",
+    "answer": "Compatibility information is listed on each product page. You can also use our compatibility checker tool on the product page by entering your device model. If you're unsure, contact support with your device details.",
+    "category": "support",
+    "intent": "support"
+  },
+  {
+    "question": "What are your store hours?",
+    "answer": "Our online store is available 24/7. Physical store hours vary by location. You can find specific hours using our store locator on the website.",
+    "category": "general",
+    "intent": "general_inquiry"
+  },
+  {
+    "question": "Do you ship internationally?",
+    "answer": "Yes, we ship to over 100 countries worldwide. International shipping costs and delivery times vary by destination. You can see available shipping options and costs at checkout.",
+    "category": "general",
+    "intent": "general_inquiry"
+  },
+  {
+    "question": "How long does shipping take?",
+    "answer": "Standard shipping takes 3-5 business days. Express shipping (1-2 business days) is available for most locations. International shipping typically takes 7-14 business days depending on the destination.",
+    "category": "general",
+    "intent": "general_inquiry"
+  },
+  {
+    "question": "How do I track my order?",
+    "answer": "You can track your order by logging into your account and visiting the 'Order History' page. Click on the order number to see tracking information. We also send tracking updates via email when your order ships.",
+    "category": "general",
+    "intent": "general_inquiry"
+  },
+  {
+    "question": "I want to file a complaint",
+    "answer": "We take your concerns seriously. Please describe your issue in detail, including any relevant order numbers or dates. A customer service manager will review your complaint and respond within 24-48 hours.",
+    "category": "escalation",
+    "intent": "grievance"
+  },
+  {
+    "question": "This is the third time I've contacted you",
+    "answer": "I sincerely apologize that your issue hasn't been resolved. I'm escalating this to our resolution team lead who will personally handle your case. You should receive a response within 4 hours.",
+    "category": "escalation",
+    "intent": "escalation"
+  },
+  {
+    "question": "I need to speak to a supervisor immediately",
+    "answer": "I understand you need to speak with a supervisor. I'm connecting you now. If a supervisor is not immediately available, I can schedule a callback within the next 30 minutes. Would that work for you?",
+    "category": "escalation",
+    "intent": "escalation"
+  }
+]

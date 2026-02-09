@@ -1,0 +1,51 @@
+# Dockerfile for Test Environment
+# Extends the base Python environment with test dependencies
+
+FROM python:3.11-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    git \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements first for better caching
+COPY requirements.txt .
+COPY pyproject.toml .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Install test-specific dependencies
+RUN pip install --no-cache-dir \
+    pytest>=7.3.0 \
+    pytest-asyncio>=0.21.0 \
+    pytest-cov>=4.1.0 \
+    pytest-html>=3.2.0 \
+    pytest-xdist>=3.3.0 \
+    httpx>=0.24.0 \
+    faker>=18.0.0 \
+    moto>=4.1.0 \
+    freezegun>=1.2.0
+
+# Download NLTK data and spaCy model for feedback pipeline
+RUN python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords'); nltk.download('vader_lexicon')"
+RUN pip install --no-cache-dir spacy && python -m spacy download en_core_web_sm
+
+# Copy application code
+COPY . .
+
+# Create directories for test artifacts
+RUN mkdir -p /app/test_artifacts /app/data/models /app/data/chroma
+
+# Set Python path
+ENV PYTHONPATH=/app
+ENV PYTHONUNBUFFERED=1
+
+# Default command
+CMD ["pytest", "tests/", "-v"]

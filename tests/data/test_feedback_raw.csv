@@ -1,0 +1,101 @@
+feedback_id,conversation_id,timestamp,rating,sentiment,comment,category,user_id
+FB150126,ea070005-ea21-4f84-a9ab-f42a4d1937c7,2026-01-13T15:28:51.888468,4,positive,Problem fixed immediately,technical,user_45811
+FB505426,3fdac331-e3cf-4c49-bd27-8ddef6b0ffcd,2026-01-30T15:28:51.888489,5,positive,Fast response times,billing,user_75038
+FB182760,ed1b3aed-11f6-4686-8fe2-66ef54fea7ea,2026-01-27T15:28:51.888507,2,negative,Had to repeat myself multiple times,other,user_33652
+FB731894,60d3c5b0-2f12-49c4-8c49-ff3cb0b82256,2026-01-18T15:28:51.888524,1,negative,Had to repeat myself multiple times,general,user_31842
+FB556068,f59ddd33-6e3e-4404-aad0-3d9cb914be71,2026-02-01T15:28:51.888540,2,negative,Had to repeat myself multiple times,return,user_19835
+FB267758,22a2eb1e-9412-4828-a01c-820d9ba3e09a,2026-01-10T15:28:51.888557,2,negative,Couldn't solve my issue,return,user_28714
+FB694799,608a2f0e-a86a-4006-af7f-a4b7bce4355d,2026-02-08T15:28:51.888576,2,negative,No follow up as promised,other,user_30111
+FB655178,160bfb3a-c8ba-4a62-b30e-7adce0140aeb,2026-01-29T15:28:51.888600,2,negative,[billing] Had to repeat myself multiple times,general,user_51207
+FB688956,14618ae3-a668-4a74-b8d2-d9ceb2b56668,2026-02-06T15:28:51.888617,1,negative,Gave wrong information,technical,user_44116
+FB309902,740ea75f-d7dd-4481-af61-b1c1258f2782,2026-02-06T15:28:51.888632,2,negative,Gave wrong information,billing,user_19706
+FB986593,41bd403b-ea66-457b-82c1-09724c83471b,2026-01-30T15:28:51.888647,5,positive,Best customer service experience,technical,user_18511
+FB834233,fbc3fb09-8762-45de-97bc-31e9bbd6a779,2026-01-20T15:28:51.888663,2,negative,Took too long to respond,billing,user_57381
+FB127560,fa7ad2f2-5e3f-4b91-ba8e-92acd835500d,2026-01-29T15:28:51.888679,1,negative,[support] Waste of my time,other,user_85009
+FB517500,8427feb1-ae73-451f-af0d-bab4025c01b5,2026-01-18T15:28:51.888695,4,positive,[technical] Very satisfied with outcome,general,user_78903
+FB177767,268a21b6-abcc-4ea5-afb9-51e33a68721f,2026-01-26T15:28:51.888710,4,positive,Accurate information provided,general,user_99143
+FB158104,c8925c34-1000-4332-912a-5cec86317c22,2026-01-14T15:28:51.888726,1,negative,[general_inquiry] Didn't understand my problem,return,user_77908
+FB462831,d8394ab0-c749-4a8a-88bd-3540fbba1042,2026-01-10T15:28:51.888740,4,positive,Friendly and knowledgeable agent,other,user_47230
+FB231250,177a9029-a4b2-4eb4-a0d8-6d5249e9b719,2026-01-20T15:28:51.888755,1,negative,Took too long to respond,technical,user_90534
+FB279516,77a92443-021e-43b1-b991-4c1bfbc6992a,2026-01-19T15:28:51.888769,1,negative,Agent seemed uninformed,other,user_89316
+FB772612,23ae5c8d-98f5-436d-b558-c17e88b8c259,2026-01-16T15:28:51.888785,4,positive,[return] Best customer service experience,other,user_44688
+FB672079,a91fdb55-ff7e-4cd6-ab6a-787fd6684577,2026-01-31T15:28:51.888799,2,negative,[escalation] Return process unclear,technical,user_73300
+FB265759,67dc88fe-5eee-452d-81e4-cb3568348d07,2026-01-26T15:28:51.888815,5,positive,[return] Very satisfied with outcome,general,user_73471
+FB869864,30f86ea0-e484-4e43-a0ea-ab111073f37a,2026-01-13T15:28:51.888830,4,positive,Fast response times,technical,user_62260
+FB380464,d2340277-417c-4ec2-8380-a13194db4d4a,2026-01-26T15:28:51.888844,4,positive,Fast response times,billing,user_28465
+FB267457,1d6833ac-c3a6-419c-bc72-b8baaa9bf6c6,2026-01-14T15:28:51.888889,5,positive,Easy to use chat interface,technical,user_85718
+FB622987,271053af-328a-4bc7-aced-ae6fd17dba21,2026-01-12T15:28:51.888953,1,negative,Gave wrong information,technical,user_75191
+FB151021,1aee9976-0afa-4cb9-926c-33825920357a,2026-02-08T15:28:51.888974,5,positive,[technical] Accurate information provided,technical,user_74866
+FB551860,bea1d0f4-3e92-49e1-b134-f97269578c6e,2026-02-05T15:28:51.888984,2,negative,[return] Technical solution didn't work,technical,user_57943
+FB304110,f8f8f686-a882-453e-b184-727478d374f0,2026-01-29T15:28:51.888992,1,negative,Had to repeat myself multiple times,other,user_47827
+FB813449,cad0ee8e-c232-4eb5-95a7-26934398218e,2026-01-21T15:28:51.888999,5,positive,[general_inquiry] Will definitely recommend,return,user_26864
+FB684929,82bc0c9d-9134-433f-b192-043e08f56d38,2026-01-10T15:28:51.889005,3,neutral,Took a while but resolved,technical,user_28909
+FB848255,93591e35-98bc-4da0-b558-942915ca6cb0,2026-01-30T15:28:51.889014,5,positive,[billing] Will definitely recommend,general,user_78069
+FB270395,e78a20ac-c56f-47a8-b62d-792fc54aeadd,2026-01-28T15:28:51.889021,4,positive,Professional and courteous,other,user_49221
+FB117445,f3d0517d-60ab-4fca-b4ca-4c2dc57daf0c,2026-01-29T15:28:51.889028,2,negative,[grievance] Agent seemed uninformed,technical,user_98317
+FB821466,00b952bc-ffb0-4f95-b325-7d023f5facec,2026-01-20T15:28:51.889036,5,positive,Accurate information provided,return,user_88238
+FB278794,ab8b6caf-2124-4c68-97ec-a3e0318c61ad,2026-01-24T15:28:51.889043,4,positive,Problem fixed immediately,other,user_59832
+FB562462,ae0c0295-f701-410d-a859-c78312346ed7,2026-01-30T15:28:51.889052,4,positive,[return] Problem fixed immediately,general,user_29848
+FB594514,6e796a16-e81f-4a2a-91b4-91e6d6d95bab,2026-01-13T15:28:51.889058,5,positive,Solved my issue on first contact,return,user_28098
+FB495129,9138947b-ba2f-406e-80bd-a5d17568f82c,2026-01-30T15:28:51.889065,2,negative,Agent seemed uninformed,billing,user_70249
+FB855944,bce4a2a0-1744-4b9f-b409-08ed6681da94,2026-01-19T15:28:51.889071,3,neutral,Standard support experience,technical,user_89963
+FB908634,688e07dc-2dcf-4509-bda7-012f32c0251a,2026-01-31T15:28:51.889078,5,positive,[technical] Solved my issue on first contact,billing,user_74094
+FB669576,baf9873c-7434-4493-a1f4-efcf61976deb,2026-01-28T15:28:51.889085,5,positive,Fast response times,general,user_55237
+FB182868,31e649af-3100-44b5-a95b-2f80cf4ee4dd,2026-01-29T15:28:51.889091,3,neutral,[escalation] Met basic expectations,general,user_95979
+FB689318,d02d6d27-c382-45ee-8852-82e26355c4be,2026-01-18T15:28:51.889099,4,positive,Exceeded my expectations,technical,user_27992
+FB656837,46064b1c-6b44-41eb-80d5-36c7868aedf0,2026-02-02T15:28:51.889105,4,positive,Clear instructions provided,billing,user_16880
+FB105433,d083cabc-fae4-45af-a503-a69edffc0e6d,2026-01-10T15:28:51.889110,5,positive,Fast response times,other,user_30701
+FB436768,6f9f9a5d-c09e-4394-9a74-3fd404ccffd8,2026-01-31T15:28:51.889117,5,positive,[technical] Best customer service experience,return,user_21725
+FB284327,914197c3-d841-4026-9831-570cdfff5196,2026-01-11T15:28:51.889124,1,negative,[grievance] Gave wrong information,return,user_62034
+FB732063,c9962fdf-7776-499a-9fc5-a95feebe464d,2026-02-06T15:28:51.889130,2,negative,[general_inquiry] Didn't understand my problem,technical,user_47298
+FB590755,fbbe8953-2f98-41f0-9178-e0a092a91dd5,2026-02-01T15:28:51.889136,5,positive,[general_inquiry] Problem fixed immediately,billing,user_24764
+FB114768,1870b353-f499-4d75-b751-14c59e060b98,2026-01-17T15:28:51.889143,5,positive,Clear instructions provided,technical,user_48669
+FB525187,1951ea96-2577-49a5-a14e-119624eb9338,2026-01-14T15:28:51.889150,1,negative,Return process unclear,general,user_77538
+FB360096,ace34cf5-bc9e-444c-be8c-2dea9a7b8eee,2026-02-09T15:28:51.889155,4,positive,[technical] Accurate information provided,technical,user_60275
+FB857997,b0677c38-c01d-42ed-b8b5-8e74ccf98be4,2026-01-22T15:28:51.889162,5,positive,Very satisfied with outcome,return,user_44282
+FB525110,26334dbd-6628-480a-8c21-71847414c1e1,2026-01-19T15:28:51.889168,1,negative,Billing issue not resolved,other,user_50760
+FB601410,21b909e8-c475-4f77-bab6-46be339c1a07,2026-02-05T15:28:51.889175,2,negative,[billing] No follow up as promised,general,user_89395
+FB965708,2519cd81-740c-42e6-99d1-eb5e5e8ad550,2026-02-03T15:28:51.889182,5,positive,Clear instructions provided,billing,user_99173
+FB479358,e9f3f942-e29c-424a-9d0e-19ac7cfa78cd,2026-02-07T15:28:51.889188,1,negative,Technical solution didn't work,other,user_24707
+FB995993,ce250eab-016e-4885-956b-d7c02793e2f5,2026-01-24T15:28:51.889195,4,positive,[technical] Will definitely recommend,general,user_25235
+FB575458,e207c628-48ef-4af6-a800-92d5c503f2e4,2026-02-05T15:28:51.889220,2,negative,Billing issue not resolved,other,user_64450
+FB122827,aef56483-a9a8-4205-9e47-576691284cc9,2026-01-28T15:28:51.889227,5,positive,"Great service, very helpful!",technical,user_10395
+FB172371,125cd49a-6ced-46bf-a255-b9c482596513,2026-01-11T15:28:51.889234,1,negative,[return] Disconnected unexpectedly,general,user_14159
+FB777255,b597c4a6-3dd6-4f72-9c55-f1094bd74c05,2026-01-10T15:28:51.889240,4,positive,Friendly and knowledgeable agent,general,user_59081
+FB495833,c1231e02-943b-42c9-8057-2d6e4cd9af6a,2026-01-28T15:28:51.889246,3,neutral,Took a while but resolved,return,user_99486
+FB224395,2510465c-5c96-4c58-93ab-c056526e08e9,2026-02-04T15:28:51.889253,3,neutral,Acceptable service,other,user_61518
+FB412856,4eb173bd-3cce-4267-aa8f-ea8c8a5cd717,2026-01-26T15:28:51.889260,1,negative,Billing issue not resolved,other,user_65591
+FB389039,1c45bd2d-a262-4f6b-aca0-79d330f7a020,2026-02-03T15:28:51.889267,1,negative,Technical solution didn't work,return,user_14222
+FB135207,60a4652c-bf46-4c21-8a5e-1649416e977c,2026-01-26T15:28:51.889273,1,negative,[general_inquiry] Couldn't solve my issue,other,user_98083
+FB345722,50e4f842-73e2-4635-88cb-885a82da2776,2026-01-23T15:28:51.889280,1,negative,Not helpful at all,billing,user_17398
+FB434394,21f6754b-a66e-42d4-a22e-adfa7ed21d7c,2026-01-22T15:28:51.889285,4,positive,Easy to use chat interface,other,user_98150
+FB646571,56edecf1-1d96-4884-bb59-3fb932faeacc,2026-02-02T15:28:51.889292,2,negative,Gave wrong information,general,user_49387
+FB619696,13107aca-f4a8-4b0e-a033-5fee959ce733,2026-02-08T15:28:51.889298,4,positive,Will definitely recommend,technical,user_94320
+FB414455,a74100c2-7fe9-47e6-a00b-3f9f5181ebe9,2026-01-28T15:28:51.889304,2,negative,Return process unclear,billing,user_80507
+FB944917,cda47367-d10c-4ada-8b68-170b1430f1ff,2026-01-26T15:28:51.889312,4,positive,Saved me a lot of time,return,user_83713
+FB778120,437d3577-7ecd-4f21-aa95-a0dd5b9f9d46,2026-02-07T15:28:51.889319,4,positive,[technical] Accurate information provided,general,user_58637
+FB141468,ad5cb174-60c4-437c-91ba-28750a29932e,2026-01-13T15:28:51.889325,4,positive,Clear instructions provided,return,user_34662
+FB449138,087a8322-8911-42e5-b7cb-1482c12a8138,2026-01-31T15:28:51.889865,1,negative,Disconnected unexpectedly,return,user_37762
+FB354377,3d7ca686-f2a9-4ce0-b3cf-7cde8871842a,2026-01-18T15:28:51.889883,3,neutral,Average service,other,user_36805
+FB659572,73a4d5df-651c-4f05-80b2-d8af443d25f8,2026-01-20T15:28:51.889892,5,positive,Solved my issue on first contact,technical,user_50425
+FB857505,17229c6d-dc0b-4f72-ba01-8a64c647e1c4,2026-01-25T15:28:51.889899,5,positive,Will definitely recommend,technical,user_36624
+FB117007,ed2ff2ed-5847-4423-9cfe-70daa8c7d38e,2026-02-01T15:28:51.889906,4,positive,[billing] Accurate information provided,other,user_86550
+FB498290,12c42e11-61ee-401d-94cf-fd61efb3414f,2026-01-22T15:28:51.889923,2,negative,Couldn't solve my issue,billing,user_75444
+FB858705,43a7d1f7-0429-4b2e-a500-73c10accc4ce,2026-01-20T15:28:51.890348,2,negative,No follow up as promised,general,user_70401
+FB612036,27fed2cf-ad27-4c53-9e58-3b9eadf73f11,2026-02-04T15:28:51.890369,5,positive,Very satisfied with outcome,other,user_94123
+FB800674,10799606-acc9-4dc7-8a78-a55fbb9100b9,2026-02-08T15:28:51.890377,3,neutral,Acceptable service,return,user_64053
+FB491329,7a0c91db-a294-4420-bf38-ff2b01c3adbe,2026-02-08T15:28:51.890387,4,positive,[support] Problem fixed immediately,other,user_93588
+FB678440,f4d86cc9-2e9d-428a-8463-84b959289af3,2026-01-27T15:28:51.890395,2,negative,[general_inquiry] Disconnected unexpectedly,return,user_12192
+FB945328,21d474a9-189d-452e-87e4-9a43637d30fe,2026-01-10T15:28:51.890402,2,negative,Took too long to respond,billing,user_24026
+FB364679,15d221d3-db7f-4453-89bd-6bd4dc75473d,2026-01-14T15:28:51.890409,3,neutral,[general_inquiry] Acceptable service,technical,user_45038
+FB355021,54e41cb0-ce5f-47af-ae94-7ca70fbabfc1,2026-01-18T15:28:51.890415,2,negative,Waste of my time,billing,user_49318
+FB896483,47e728f2-6b4b-4ad3-ad60-52241744d314,2026-02-08T15:28:51.890421,1,negative,Technical solution didn't work,return,user_63120
+FB776234,ed225bb2-0472-4350-8ffa-f97f43c40e56,2026-01-15T15:28:51.890431,5,positive,Willl definitely recommend,technical,user_84167
+FB340927,abf5ef0e-e49d-4bb5-9a83-7ff993223d30,2026-02-03T15:28:51.890437,3,neutral,Average service,other,user_72324
+FB690882,9389f5a2-94c7-4790-b8fb-4ca7e73ab9d5,2026-01-19T15:28:51.890445,4,positive,[general_inquiry] Best customer service experience,return,user_33508
+FB847332,a96103d9-c785-45e3-aa01-4fb34571351c,2026-01-14T15:28:51.890452,3,neutral,[grievance] Standard support experience,general,user_20084
+FB809922,342f5553-3c68-4c2e-a72e-10bb117d5e67,2026-01-12T15:28:51.890459,4,positive,Professional and courteous,other,user_53480
+FB182237,8a7d3ae5-b424-4899-b1b4-3a4e0eb7aa33,2026-01-24T15:28:51.890464,4,positive,Clear instructions provided,technical,user_17038
+FB724540,a2bbeb0f-75aa-4067-aa1b-ddb6d6af118f,2026-01-28T15:28:51.890471,4,positive,Solved my issue on first contact,technical,user_13883
+FB493663,a96708d5-a73f-4e16-859f-931db9dce661,2026-01-27T15:28:51.890478,2,negative,Return process unclear,billing,user_99088
+FB847748,376b8f11-b457-4b08-81d1-82756a48802d,2026-02-07T15:28:51.890484,1,negative,[billing] Couldn't solve my issue,return,user_45123
